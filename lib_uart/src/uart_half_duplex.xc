@@ -150,7 +150,7 @@ void uart_half_duplex(server interface uart_tx_buffered_if i_tx,
                 // printstrln("UART_TX_MODE");
                 select 
                 {
-                    // If we're not in the waiting state, go through state
+                    // If we're not in the waiting state, go through state
                     //  machine once per bit time
                     case (tx_state != WAITING_FOR_DATA && tx_state != TX_INACTIVE) => tmr when timerafter(t) :> void:
                     {
@@ -161,7 +161,7 @@ void uart_half_duplex(server interface uart_tx_buffered_if i_tx,
                                 p_uart <: (byte >> bit_count) & 0x1;
                                 bit_count++;
                                 t += bit_time;
-                                // printf("    Outputing bit %d (%d, %dns)\n", bit_count, (byte >> bit_count) & 0x1, t);
+
                                 if (bit_count == bits_per_byte)
                                 {
                                     bit_count = 0;
