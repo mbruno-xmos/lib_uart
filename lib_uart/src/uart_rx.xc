@@ -5,7 +5,7 @@
 #include <xs1.h>
 #include <stdio.h>
 #include <print.h>
-#include <xscope.h>
+//#include <xscope.h>
 #include <gpio.h>
 #include <debug_print.h>
 #include <xclib.h>
@@ -52,7 +52,7 @@ static inline int add_to_buffer(unsigned char buffer[n], unsigned n,
   }
 
   // Output tracing information of the values entering the buffer
-  xscope_char(UART_RX_VALUE, data);
+//  xscope_char(0, data);
 
   buffer[wrptr] = data;
   wrptr = new_wrptr;

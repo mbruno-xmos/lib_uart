@@ -5,7 +5,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <print.h>
-#include <xscope.h>
+//#include <xscope.h>
 #include "xassert.h"
 
 #ifndef UART_TX_DISABLE_DYNAMIC_CONFIG
@@ -54,7 +54,7 @@ static inline void init_transmit(unsigned char buffer[buf_length], unsigned buf_
   byte = buffer[rdptr];
 
   // Trace the outgoing data
-  xscope_char(UART_TX_VALUE, byte);
+//  xscope_char(1, byte);
 
   rdptr++;
   if (rdptr == buf_length)
